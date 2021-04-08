@@ -48,9 +48,11 @@ Tanto el dataset de Amazon como el de Ebay muestra el comportamiento de precios 
 ## 7. Inspiración
   Los códigos formulados permiten recopilar en un instante los conceptos y precios de dos de las principales plataformas de venta online en España. Esto es un gran avance ya que el internet cada día esta más cerca de llegar a los que los economistas denominan "**competencia perfecta**". La competencia perfecta es cuando en los mercados se encuentran productos estandarizados y hay plena transparencia sobre los precios y los productos. Justamente con los codigos empleados estamos más cerca de llegar a lo que denominamos competencia perfecta ya que podemos recopilar los conceptos y precios de los diferentes productos. No solo conseguimos que sea útil para el consumidor ya que permite ver donde se encuentran los mejores precios y productos, sino además da la posibilidad de que cualquier empresa que venda algún tipo de producto, pueda conocer con facilidad como se encuentran los precios del mercado y así marcar ciertas estrategias que le ayuden con sus objetivos. 
 
-## 8. Licencia
-  
-  Significa que tanto las que creen como sus derivadas pueden hacerse de uso comercial siendo obligatoriamente todas esas creaciones bajo la misma licencia CC by SA 4.0
+## 8. Licencia: CC BY-SA 4.0
+  La licencia por la que optamos es licencia CC by SA 4.0. Esta decisión se sustenta en 3 pilares:
+  - **Uso comercial**: Como esta orientada hacia el comercio creemos que sería recomendable que se hiciera un uso comercial porque así podria mejorarse y adaptarse para un mayor número de personas.
+  - **Emplear bajo misma licencia**: Tantos las remezclas, transformaciones y creaciones que partan de este material debera difundirse bajo la misma licencia.
+  - **Autoria**: Al hacer uso del material hay que indicar la autoría, mostrar el enlace a la licencia e indicar los cambios efectuados.
 
 ## Funcionamiento del web excraper
 explicación de los metodos empleados para la recolección de la información
