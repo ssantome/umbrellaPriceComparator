@@ -1,0 +1,171 @@
+---
+title: "vafonsor_prac1"
+author: "Víctor Elías Afonso Rodríguez y Saúl Santomé Rúa"
+date: "6/4/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##  1. Contexto            
+##  2. Título para el dataset               
+##  3. Descripción del dataset              
+##  4. Representación gráfica           
+##  5. Contenido              
+##  6. Agradecimientos                 
+##  7. Inspiración             
+##  8. Licencia               
+##  9. Código    
+
+# 9.1 Cargamos librerias necesarias
+```{r}
+library(robotstxt)
+library(rvest)
+library(readr)
+```
+
+La libreria "**robotstxt**" nos permite comprobar el archivo robot de las diferentes webs para asegurarnos que podemos realizar scraping.
+La libreria **rvest** permite extraer información de una web.           
+La libreria **readr** permite exportar dataset a csv.          
+
+
+# 9.2 Elegimos la url de la que queremos extraer la información 
+
+Amazon
+```{r}
+url_ama <- "https://www.amazon.es/s?k=paraguas&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2TPM4DDOUJYAX&sprefix=paraguas%2Caps%2C276&ref=nb_sb_ss_ts-doa-p_4_8"
+```
+
+Ebay
+```{r}
+url_eba <- "https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=paraguas&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=paragua"
+```
+
+# 9.3 Comprobamos que se puede realizar scraping
+
+Amazon
+```{r}
+paths_allowed(paths=c(url_ama))
+```
+
+Ebay
+```{r}
+paths_allowed(paths=c(url_eba))
+```
+El valor "TRUE" indica que podemos realizar scraping.
+
+# 9.4 Convertimos en objeto
+
+Amazon
+```{r}
+web_ama <- read_html(url_ama)
+```
+
+Ebay
+```{r}
+web_eba <- read_html(url_eba)
+```
+
+"read_html" permite leer el código html.
+
+# 9.5 Escogemos la información que queremos extraer de cada web          
+# 9.5.1 Nombre de artículos           
+
+Amazon
+```{r}
+nombre_artículo_ama <- ".s-line-clamp-2"
+
+nombre_artículo_ama <- html_nodes(web_ama,nombre_artículo_ama)
+
+nombre_artículo_ama <- html_text(nombre_artículo_ama)
+
+nombre_artículo_ama <- nombre_artículo_ama[0:58]
+```
+
+Ebay
+```{r}
+nombre_artículo_eba <- ".s-item__title"
+
+nombre_artículo_eba <- html_nodes(web_eba,nombre_artículo_eba)
+
+nombre_artículo_eba <- html_text(nombre_artículo_eba)
+
+nombre_artículo_eba <- nombre_artículo_eba[0:58]
+```
+
+"html_nodes" permite extaer las partes deseadas del código HTML.
+"html_text" transformamos a texto.
+
+# 9.5.2 Precio de artículos
+
+Amazon
+```{r}
+precio_artículo_ama <- ".a-price-whole"
+
+precio_artículo_ama <- html_nodes(web_ama,precio_artículo_ama)
+
+precio_artículo_ama <- html_text(precio_artículo_ama)
+
+precio_artículo_ama <- gsub(",",".",precio_artículo_ama)
+ 
+precio_artículo_ama <- as.numeric(precio_artículo_ama)
+
+precio_artículo_ama <- precio_artículo_ama[0:58]
+```
+
+Ebay
+```{r}
+precio_artículo_eba <- ".s-item__price"
+
+precio_artículo_eba <- html_nodes(web_eba,precio_artículo_eba)
+
+precio_artículo_eba <- html_text(precio_artículo_eba)
+
+precio_artículo_eba <- gsub("EUR","",precio_artículo_eba)
+
+precio_artículo_eba <- gsub(",",".",precio_artículo_eba)
+ 
+precio_artículo_eba <- as.numeric(precio_artículo_eba)
+
+precio_artículo_eba <- precio_artículo_eba[0:58]
+```
+## 10. Dataset
+
+Unimos nombre con precio de los diferentes artículos
+
+Amazon
+```{r}
+Amazon <- data.frame(Producto = nombre_artículo_ama, Precio = precio_artículo_ama)
+```
+
+Representamos el comportamiento de los precios en Amazon
+```{r}
+barplot(precio_artículo_ama, main = "Precios de paraguas en Amazon")
+```
+Ebay
+```{r}
+Ebay <- data.frame(Producto = nombre_artículo_eba, Precio = precio_artículo_eba)
+```
+Representamos el comportamiento de precios en Ebay
+```{r}
+barplot(precio_artículo_eba, main = "Precios de paraguas en Ebay")
+```
+```{r}
+summary(precio_artículo_eba)
+```
+```{r}
+summary(precio_artículo_ama)
+```
+Observamos que los precios son menores en Ebay.
+
+Exportamos csv
+
+```{r}
+write_csv(Amazon, file = "Amazon.csv")
+write_csv(Ebay, file= "Ebay.csv")
+```
+
