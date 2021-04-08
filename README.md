@@ -54,6 +54,8 @@ Tanto el dataset de Amazon como el de Ebay muestra el comportamiento de precios 
   - **Emplear bajo misma licencia**: Tantos las remezclas, transformaciones y creaciones que partan de este material debera difundirse bajo la misma licencia.
   - **Autoría**: Al hacer uso del material hay que indicar la autoría, mostrar el enlace a la licencia e indicar los cambios efectuados.
 
+## 9. Código
+
 ## Funcionamiento del web excraper
 explicación de los metodos empleados para la recolección de la información
 
