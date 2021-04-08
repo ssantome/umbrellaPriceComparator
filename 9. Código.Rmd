@@ -154,7 +154,7 @@ summary(precio_artículo_ama)
 ```
 Observamos que los precios son menores en Ebay.
 
-Exportamos csv
+Exportamos a csv
 
 ```{r}
 write_csv(Amazon, file = "Amazon.csv")
