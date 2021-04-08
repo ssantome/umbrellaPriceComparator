@@ -10,15 +10,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-##  1. Contexto            
-##  2. Título para el dataset               
-##  3. Descripción del dataset              
-##  4. Representación gráfica           
-##  5. Contenido              
-##  6. Agradecimientos                 
-##  7. Inspiración             
-##  8. Licencia               
+              
 ##  9. Código    
 
 # 9.1 Cargamos librerias necesarias
