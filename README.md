@@ -52,7 +52,7 @@ Tanto el dataset de Amazon como el de Ebay muestra el comportamiento de precios 
   La licencia por la que optamos es licencia CC by SA 4.0. Esta decisión se sustenta en 3 pilares:
   - **Uso comercial**: Como esta orientada hacia el comercio creemos que sería recomendable que se hiciera un uso comercial porque así podria mejorarse y adaptarse para un mayor número de personas.
   - **Emplear bajo misma licencia**: Tantos las remezclas, transformaciones y creaciones que partan de este material debera difundirse bajo la misma licencia.
-  - **Autoria**: Al hacer uso del material hay que indicar la autoría, mostrar el enlace a la licencia e indicar los cambios efectuados.
+  - **Autoría**: Al hacer uso del material hay que indicar la autoría, mostrar el enlace a la licencia e indicar los cambios efectuados.
 
 ## Funcionamiento del web excraper
 explicación de los metodos empleados para la recolección de la información
