@@ -207,18 +207,21 @@ Representamos el comportamiento de precios en Ebay
 ```{r}
 barplot(precio_articulo_eba, main = "Precios de paraguas en Ebay")
 ```
-```{r}
-summary(precio_articulo_eba)
-```
+
 ```{r}
 summary(precio_articulo_ama)
 ```
+
+```{r}
+summary(precio_articulo_eba)
+```
+
 Observamos que los precios son menores en Ebay.
 
 Exportamos a csv
 
 ```{r}
-write_csv(Amazon, file = "Amazon.csv")
-write_csv(Ebay, file= "Ebay.csv")
+write_csv(Amazon, file = "../datasets/Amazon.csv")
+write_csv(Ebay, file= "../datasets/Ebay.csv")
 ```
 
