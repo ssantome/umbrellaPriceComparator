@@ -17,4 +17,4 @@ Podemos encontrarnos el dataset subido a la plataforma Zenodo con el DOI 10.5281
 
 ## Licencia
 
-Este proyecto esta sujeto a los terminos y condiciones de la licencia CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/deed.es)
+Este proyecto está sujeto a los términos y condiciones de la licencia CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/deed.es)
